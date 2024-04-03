@@ -1,8 +1,8 @@
 # OnlineLearningPlatform
 
- ## Welcome to the OnlineLearningPlatform project! This project is built with FastAPI, a modern, fast (high-performance), web framework for building APIs with Python 3.11 amd MySQL.
+Welcome to the OnlineLearningPlatform project! This project is built with FastAPI, a modern, fast (high-performance), web framework for building APIs with Python 3.11 and MySQL.
 
-## Getting Started
+##Getting Started
 ## Follow these steps to set up and run the project locally:
 
 ## Prerequisites
