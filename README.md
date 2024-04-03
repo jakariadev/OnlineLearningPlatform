@@ -38,8 +38,8 @@ Welcome to the OnlineLearningPlatform project! This project is built with FastAP
 ``` cd EmsApp ```
 
 ### Configuration
-
- Open the ``` EmsApp\database.py ``` file and update the MySQL database credentials:
+Create a Mysql DB with name ```ems``` Then
+Open the ``` EmsApp\database.py ``` file and update the MySQL database credentials:
 
 ``` SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://username:password@localhost:3306/ems' ```
 
