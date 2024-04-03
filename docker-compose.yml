@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE: ems
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ""
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    environment:
+      - SQLALCHEMY_DATABASE_URL=mysql+pymysql://root:@mysql:3306/ems
