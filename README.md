@@ -66,18 +66,17 @@ Later just ```docker-compose up```
 
 
 ## API Payloads
-- Create Course []
-  ``` {
+#### Create Course 
+{
   "title": "string",
   "description": "string",
   "instructor": "string",
   "duration": 0,
   "price": 100000000
-} 
-```
-- Create Enrollment
+}
 
-```
+#### Create Enrollment
+
 {
   "student_name": "string",
   "enrollment_date": "2024-04-03",
@@ -85,6 +84,5 @@ Later just ```docker-compose up```
     "id": 0
   }
 }
-```
 
 Use your favorite API client (e.g., Postman, Insomnia) or a web browser to interact with the API endpoints.
