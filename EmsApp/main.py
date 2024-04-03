@@ -16,7 +16,7 @@ def health_check():
 
 url_link = "http://127.0.0.1:8000/docs"
 @app.get("/")
-def health_check():
+def home_page():
     return {"status": f"Healthy! Goto: {url_link} "}
 
 app.include_router(courses.router)
