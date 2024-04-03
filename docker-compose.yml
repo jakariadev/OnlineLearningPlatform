@@ -1,23 +1,26 @@
 version: '3'
 
 services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./EmsApp:/app/EmsApp
+    environment:
+      - SQLALCHEMY_DATABASE_URL=mysql+pymysql://username:password@mysql:3306/ems
+    depends_on:
+      - mysql
+
   mysql:
     image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: ems
       MYSQL_USER: root
       MYSQL_PASSWORD: ""
-    volumes:
-      - ./mysql-data:/var/lib/mysql
-
-  app:
-    build: .
-    ports:
-      - "8000:8000"
-    depends_on:
-      - mysql
-    environment:
-      - SQLALCHEMY_DATABASE_URL=mysql+pymysql://root:@mysql:3306/ems
+      MYSQL_ROOT_PASSWORD: ""
